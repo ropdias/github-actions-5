@@ -4,6 +4,8 @@ on:
     branches:
       - main
       - dev
+    paths-ignore:
+      - '**/README.md'
 # defining env variables here make them available for all jobs, unless one job overwrite it
 # by defining a variable of the same name
 env:
