@@ -5,7 +5,7 @@ on:
       - main
       - dev
     paths-ignore:
-      - '**/README.md'
+      - '**/README.md' # This will ignore all pushs that changes only the README.md
 # defining env variables here make them available for all jobs, unless one job overwrite it
 # by defining a variable of the same name
 env:
