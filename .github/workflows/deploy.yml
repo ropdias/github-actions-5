@@ -15,8 +15,8 @@ jobs:
     # Here we are defining env variables only for this job
     env:
       MONGODB_CLUSTER_ADDRESS: cluster0.efcdi7r.mongodb.net
-      MONGODB_USERNAME: github-actions-test
-      MONGODB_PASSWORD: HAgHkxI2sPebLLN6
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }} # Here we are accessing GitHub Actions Secrets
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }} # Here we are accessing GitHub Actions Secrets
       PORT: 8080
     environment: testing
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: | # Here we are using the env object (another way to access the env variable)
+        run: | # Here we are using the env object (another way to access the env variable) (Since we are using a secret now this wont be exposed)
           echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
   deploy:
     needs: test
