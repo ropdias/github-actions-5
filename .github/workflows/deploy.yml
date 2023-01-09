@@ -12,7 +12,7 @@ env:
   MONGODB_DB_NAME: gha-demo
 jobs:
   test:
-    # Here we are defining the GitHub environment this job will use
+    # Here we are defining the GitHub environment this job will use !
     environment: testing
     # Here we are defining env variables only for this job
     env:
